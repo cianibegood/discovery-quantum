@@ -9,10 +9,10 @@ def pauli_measure(rho, pauli):
     """ The density matrix rho and the pauli operator
     pauli must be numpy arrays """
 
-    d = np.shape(pauli)[0]
-    ide = np.identity(d, dtype=complex)
-    pi_plus = 1/d*(ide + pauli) #projector on +1 eigenspace 
-    pi_minus = 1/d*(ide - pauli) #projector on -1 eigenspace 
+    n = 2
+    ide = np.identity(2**n, dtype=complex)
+    pi_plus = 1/2*(ide + pauli) #projector on +1 eigenspace 
+    pi_minus = 1/2*(ide - pauli) #projector on -1 eigenspace 
     p = np.trace(pi_plus.dot(rho)) #probability of +1 measurement
     x = np.random.random()
     if x < p:
