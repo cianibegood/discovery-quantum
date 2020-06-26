@@ -33,12 +33,6 @@ x1y2 = np.kron(x, y)
 y1x2 = np.kron(y, x)
 pi_plus = 1/2*(ide_2q + x1)
 
-#%%
-pippo = operations.pauli_measure(rho_singlet, y1)
-pluto = operations.pauli_measure(pippo[1], y2)
-print(pippo[0])
-print(pluto[0])
-
 # %%
 """ We group them in appropriate sets of commuting 
 observables that the user can choose to measure in one 
@@ -59,19 +53,26 @@ s_l = [sx_l, sy_l, s1_l, s2_l, s3_l]
 set_l = ['sx', 'sy', 's1', 's2', 's3']
 
 # %%
-print("Ciao! In questo problema ti viene dato uno stato quantistico")
-print("sul quale puoi effettuare delle misure. I dettagli del sistema")
-print("non ti vengono rivelati, ma sta a te scoprirli tramite le misure")
-print("Puoi scegliere di misurare i seguenti gruppi di osservabili:")
+print("Ciao! In questa simulazione ti viene dato uno stato quantistico")
+print("sul quale puoi effettuare delle misure. ")
+print("Puntualizziamo che è possibile creare un sistema che si comporti ")
+print("esattamente in questo modo in laboratorio. Devi immaginare quindi")
+print("che tu stia effettuando un esperimento ed interpretare i risultati.")
+print("Il sistema è costituito da due sottosistemi 1 e 2. Puoi ")
+print("immaginare ogni sistema come un magnete (uno spin) del quale puoi")
+print("misurare la magnetizzazione lungo la direzione x o y ad esempio.")
+print("Ulteriori dettagli non ti vengono rivelati, ma sta a te scoprirli tramite" )
+print("le misure appunto.")
+print("Iniziamo! Puoi scegliere di misurare i seguenti gruppi di osservabili:")
 print("sx = [x1, x2]")
 print("sy = [y1, y2]")
 print("s1 = [x1y2, x1, y2]")
-print("s2 = [y1x2, xy, x2]")
+print("s2 = [y1x2, y1, x2]")
 print("s3 = [x1y2, y1x2]")
 print("Una volta scelto l'insieme di grandezze, puoi scegliere la")
 print("grandezza che vuoi misurare. Puoi misurare le grandezze all'interno")
-print("di un insieme quante volte vuoi. Se vuoi cambiare insieme il programma")
-print("ricomincerà da capo, iniziando un nuovo esperimento.")
+print("di un insieme quante volte vuoi. Se vuoi cambiare insieme, puoi riavviare")
+print("il programma da capo, iniziando un nuovo esperimento.")
 print("Prendi nota delle tue osservazioni e conclusioni!")
 
 # %%
