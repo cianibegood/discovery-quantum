@@ -31,6 +31,7 @@ y1 = np.kron(y, ide)
 y2 = np.kron(ide, y)
 x1y2 = np.kron(x, y)
 y1x2 = np.kron(y, x)
+x1x2y1y2 = np.kron(np.dot(x, y), np.dot(y, x))
 pi_plus = 1/2*(ide_2q + x1)
 
 # %%
@@ -42,13 +43,13 @@ sx = np.array([x1, x2])
 sy = np.array([y1, y2])
 s1 = np.array([x1y2, x1, y2])
 s2 = np.array([y1x2, y1, x2])
-s3 = np.array([x1y2, y1x2])
+s3 = np.array([x1y2, y1x2, x1x2y1y2])
 set_obs = [sx, sy, s1, s2, s3]
 sx_l = ['x1', 'x2']
 sy_l = ['y1', 'y2']
 s1_l = ['x1y2', 'x1', 'y2']
 s2_l = ['y1x2', 'y1', 'x2']
-s3_l = ['x1y2', 'y1x2']
+s3_l = ['x1y2', 'y1x2', 'x1x2y1y2']
 s_l = [sx_l, sy_l, s1_l, s2_l, s3_l]
 set_l = ['sx', 'sy', 's1', 's2', 's3']
 
